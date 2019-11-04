@@ -4,7 +4,7 @@ import Questions from "./Questions";
 import Question from "./Question";
 
 class App extends Component {
-    API_URL = process.env.REACT_APP_API_URL;
+    API_URL = 'https://maureen-qanda-app.herokuapp.com/api';
 
     constructor(props) {
         super(props);

@@ -55,7 +55,7 @@ app.get('*', (req, res) =>
 );
 
 /**** Start ****/
-const url = ( process.env.MONGO_URL );
+const url = ( 'mongodb+srv://maureenkoopman:Development1!@cluster0-pyjf5.mongodb.net/test?retryWrites=true&w=majority' );
 mongoose.connect(url, {useNewUrlParser: true});
 
 
