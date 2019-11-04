@@ -26,7 +26,7 @@ export default class postAnswer extends Component {
                 <div className="card-body">
                     <form>
                         <div className="form-group">
-                            <label htmlFor="itemText">Question:</label>
+                            <label htmlFor="itemText">Answer:</label>
                             <input type="text" className="form-control" id="itemText"
                                    placeholder="Type answer here"
                                    onChange={(event) => this.handleChange(event)}
@@ -35,7 +35,7 @@ export default class postAnswer extends Component {
                             </small>
                         </div>
                         <button onClick={(event) => this.handleButtonClick(event)}
-                                type="submit" id="submitItemBtn" className="btn btn-primary">Add Question
+                                type="submit" id="submitItemBtn" className="btn btn-primary">Add Answer
                         </button>
                     </form>
                 </div>
