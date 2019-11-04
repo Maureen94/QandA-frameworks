@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 const path = require('path');
 
 /**** Configuration ****/
+const port = (process.env.PORT || 8080);
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
@@ -56,7 +57,12 @@ app.get('*', (req, res) =>
 
 /**** Start ****/
 const url = ( 'mongodb+srv://maureenkoopman:Development1!@cluster0-pyjf5.mongodb.net/test?retryWrites=true&w=majority' );
-mongoose.connect(url, {useNewUrlParser: true});
+mongoose.connect(url, {useNewUrlParser: true}).then(async () => {
+    await kittenDAL.bootstrap(); // Fill in test data if needed.
+    await app.listen(port); // Start the API
+    console.log(`Kitten API running on port ${port}!`)
+})
+    .catch(error => console.error(error));;
 
 
 
