@@ -62,7 +62,6 @@ class Db {
         }
 
     }
-
 }
 
 module.exports = mongoose => new Db(mongoose);

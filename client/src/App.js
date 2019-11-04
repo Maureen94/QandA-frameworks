@@ -83,20 +83,14 @@ class App extends Component {
 
     render() {
         return (
-            <div className="container">
-                <div className="row">
-                    <div className="col-sm"/>
-                    <div className="col-sm-8">
-                        <br/>
-                        <Router>
-                            <Question path="/question/:id" postAnswerToDB={ this.postAnswerToDB} postUpvoteAnswerToDB={this.postUpvoteAnswerToDB} postDownvoteAnswerToDB={this.postDownvoteAnswerToDB} getQuestion={id=> this.getQuestion(id)} />
-                            <Questions path="/" postQuestionToDB={this.postQuestionToDB} questions={this.state.questions}/>
-                        </Router>
-                        <br/>
-                    </div>
-                    <div className="col-sm"/>
+                <div>
+                    <br/>
+                    <Router>
+                        <Question path="/question/:id" postAnswerToDB={ this.postAnswerToDB} postUpvoteAnswerToDB={this.postUpvoteAnswerToDB} postDownvoteAnswerToDB={this.postDownvoteAnswerToDB} getQuestion={id=> this.getQuestion(id)} />
+                        <Questions path="/" postQuestionToDB={this.postQuestionToDB} questions={this.state.questions}/>
+                    </Router>
+                    <br/>
                 </div>
-            </div>
         );
     }
 }

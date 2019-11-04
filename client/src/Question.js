@@ -9,7 +9,6 @@ class Question extends Component {
     }
 
     render() {
-
         const question = this.props.getQuestion(this.props.id);
         this.state.question = question;
         let content = <p>Loading</p>;
@@ -33,11 +32,8 @@ class Question extends Component {
                     <Link to="/">Back</Link>
                     <PostAnswer postAnswerToDB = { this.props.postAnswerToDB } getQuestion={id => this.props.getQuestion(id)} questionID = { question._id }/>
                 </React.Fragment>
-
         }
-
         return content;
     }
 }
-
 export default Question;
