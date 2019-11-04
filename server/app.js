@@ -55,7 +55,7 @@ app.get('*', (req, res) =>
 );
 
 /**** Start ****/
-const url = ( process.env.MONGO_URL || 'mongodb://localhost/question_db');
+const url = ( process.env.MONGO_URL );
 mongoose.connect(url, {useNewUrlParser: true});
 
 
