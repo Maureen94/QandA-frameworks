@@ -44,7 +44,7 @@ class App extends Component {
 
     }
 
-    postAnswerToDB(text, id){
+    async postAnswerToDB(text, id){
         fetch(`${this.API_URL}/questions/`+id+"/answers",{
             method: 'post',
             body: JSON.stringify({
@@ -52,10 +52,10 @@ class App extends Component {
                 "upVote": 0
             }),
             headers: new Headers({ "Content-Type": "application/json" })
-        }).then();
+        }).then(await this.getQuestions());
     }
 
-    postDownvoteAnswerToDB(questionId, answerId){
+    async postDownvoteAnswerToDB(questionId, answerId){
         fetch(`${this.API_URL}/questions/answer/downvote`,{
             method: 'put',
             body: JSON.stringify({
@@ -63,10 +63,10 @@ class App extends Component {
                 "answerId": answerId
             }),
             headers: new Headers({ "Content-Type": "application/json" })
-        }).then();
+        }).then(await this.getQuestions());
     }
 
-    postUpvoteAnswerToDB(questionId, answerId){
+    async postUpvoteAnswerToDB(questionId, answerId){
         fetch(`${this.API_URL}/questions/answer/upvote`,{
             method: 'put',
             body: JSON.stringify({
@@ -74,7 +74,7 @@ class App extends Component {
                 "answerId": answerId
             }),
             headers: new Headers({ "Content-Type": "application/json" })
-        }).then();
+        }).then(await this.getQuestions());
     }
 
     getQuestion(id) {

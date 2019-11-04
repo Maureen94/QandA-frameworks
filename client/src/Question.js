@@ -5,11 +5,13 @@ import PostAnswer from "./PostAnswer";
 class Question extends Component {
     constructor(props) {
         super(props);
-        this.state = {questions:[]}
+        this.state = {};
     }
 
     render() {
+
         const question = this.props.getQuestion(this.props.id);
+        this.state.question = question;
         let content = <p>Loading</p>;
 
         if (question) {
@@ -29,7 +31,7 @@ class Question extends Component {
                     </ul>
 
                     <Link to="/">Back</Link>
-                    <PostAnswer postAnswerToDB = { this.props.postAnswerToDB } questionID = { question._id }/>
+                    <PostAnswer postAnswerToDB = { this.props.postAnswerToDB } getQuestion={id => this.props.getQuestion(id)} questionID = { question._id }/>
                 </React.Fragment>
 
         }
